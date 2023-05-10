@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { AuthModule } from './auth/auth.module';
+// import { StoreModule } from '@ngrx/store';
+// import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -13,9 +15,11 @@ import { reducers, metaReducers } from './reducers';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    })
+    // StoreModule.forRoot(reducers, {
+    //   metaReducers
+    // }),
+    DashboardModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
