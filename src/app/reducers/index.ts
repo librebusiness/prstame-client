@@ -1,19 +1,17 @@
 import { isDevMode } from '@angular/core';
 import {
-  ActionReducer,
   ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
   MetaReducer
 } from '@ngrx/store';
+import { authReducer, AuthState } from './auth.reducer';
 
-export interface State {
-
+export interface AppState {
+  auth: AuthState,
 }
 
-export const reducers: ActionReducerMap<State> = {
-
+export const reducers: ActionReducerMap<AppState> = {
+  auth: authReducer,
 };
 
 
-export const metaReducers: MetaReducer<State>[] = isDevMode() ? [] : [];
+export const metaReducers: MetaReducer<AppState>[] = isDevMode() ? [] : [];

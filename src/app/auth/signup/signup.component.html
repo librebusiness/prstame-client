@@ -1,1 +1,35 @@
-<p>signup works!</p>
+<div class="md:flex h-[100vh] items-center">
+    <div class="hidden md:flex w-2/3 items-center justify-center">
+        <img src="/assets/svg/career-progress.svg" alt="" class="w-3/4 block">
+    </div>
+    <div class="flex-auto flex items-center h-full">
+        <div class="my-auto w-full">
+            <img src="/assets/apple-touch-icon.png" class="block mx-auto mt-8">
+            <h1 class="text-4xl text-indigo-500 text-center font-cursive mb-8">Prstame</h1>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="md:w-2/3 w-4/5 mx-auto">
+                <h2 class="text-3xl">Signup</h2>
+                <div class="my-6">
+                    <input type="text" placeholder="Name" formControlName="name"
+                        class="border block w-full px-4 py-3">
+                </div>
+                <div class="my-6">
+                    <input type="email" placeholder="Email" formControlName="email"
+                        class="border block w-full px-4 py-3">
+                </div>
+                <div class="my-6">
+                    <input type="password" placeholder="Password" formControlName="password"
+                        class="border block w-full px-4 py-3">
+                </div>
+                <div class="my-6">
+                    <input type="password" placeholder="Password Confirmation" formControlName="passwordConfirm"
+                        class="border block w-full px-4 py-3">
+                </div>
+                <button class="mb-6 block w-full hover:bg-indigo-700 px-4 py-3 bg-indigo-500 text-white"
+                    type="submit">Signup</button>
+                <div class="text-center">
+                    Already have an account? <a [routerLink]="['/auth', 'login']" class="underline">Login</a> instead
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -7,6 +7,7 @@ module.exports = {
     fontFamily: {
       sans: ['Open Sans', 'sans-serif'],
       serif: ['Cormorant', 'serif'],
+      cursive: ['Lemon', 'cursive'],
     },
     extend: {},
   },
