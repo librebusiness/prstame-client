@@ -9,14 +9,14 @@
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="md:w-2/3 w-4/5 mx-auto">
                 <h2 class="text-3xl">Login</h2>
                 <div class="my-6">
-                    <input type="email" placeholder="Email" formControlName="email"
-                        class="border block w-full px-4 py-3">
+                    <input type="email" autofocus placeholder="Email" formControlName="email"
+                        class="border block w-full px-4 py-3" required>
                 </div>
                 <div class="my-6">
                     <input type="password" placeholder="Password" formControlName="password"
-                        class="border block w-full px-4 py-3">
+                        class="border block w-full px-4 py-3" required minlength="6">
                 </div>
-                <button class="mb-6 block w-full hover:bg-indigo-700 px-4 py-3 bg-indigo-500 text-white"
+                <button [disabled]="loginForm.invalid" class="mb-6 block w-full disabled:hover:bg-indigo-300 disabled:bg-indigo-300 disabled:cursor-not-allowed hover:bg-indigo-700 px-4 py-3 bg-indigo-500 text-white"
                     type="submit">Login</button>
                 <div class="text-center mb-3">
                     <a class="underline" [routerLink]="['/auth', 'password-recovery']">Forgotten password?</a>

@@ -10,6 +10,16 @@ export enum AuthActionTypes {
     signupStart = '[Auth] signup start',
     signupFailed = '[Auth] signup failed',
     signupSuccess = '[Auth] signup success',
+    loadUserStart = '[Auth] load user request',
+    loadUserFailed = '[Auth] load user success',
+    loadUserSuccess = '[Auth] load user failed',
+    userLogout = '[Auth] user logout',
+    passwordRecoveryRequestStart = '[Auth] password recovery request start',
+    passwordRecoveryRequestFailed = '[Auth] password recovery request failed',
+    passwordRecoveryRequestSuccess = '[Auth] password recovery request success',
+    passwordRestoreRequestStart = '[Auth] password restore request start',
+    passwordRestoreRequestFailed = '[Auth] password restore request failed',
+    passwordRestoreRequestSuccess = '[Auth] password restore request success',
 }
 
 export const loginStartAction = createAction(
@@ -39,5 +49,49 @@ export const signupFailedAction = createAction(
 
 export const signupSuccessAction = createAction(
     AuthActionTypes.signupSuccess,
+    props<{ message: string, code: number, data: User, token: string }>(),
+);
+
+export const loadUserStartAction = createAction(AuthActionTypes.loadUserStart);
+
+export const loadUserFailedAction = createAction(
+    AuthActionTypes.loadUserFailed,
     props<{ message: string, code: number }>(),
+);
+
+export const loadUserSuccessAction = createAction(
+    AuthActionTypes.loadUserSuccess,
+    props<{ message: string, data: User }>(),
+);
+
+export const userLogoutAction = createAction(AuthActionTypes.userLogout);
+
+export const passwordRecoveryRequestStartAction = createAction(
+    AuthActionTypes.passwordRecoveryRequestStart,
+    props<{ email: string }>(),
+);
+
+export const passwordRecoveryRequestFailedAction = createAction(
+    AuthActionTypes.passwordRecoveryRequestFailed,
+    props<{ reason: string, code: string }>(),
+);
+
+export const passwordRecoveryRequestSuccessAction = createAction(
+    AuthActionTypes.passwordRecoveryRequestSuccess,
+    props<{ message: string }>(),
+);
+
+export const passwordRestoreRequestStartAction = createAction(
+    AuthActionTypes.passwordRestoreRequestStart,
+    props<{ _id: string, token: string, password: string }>(),
+);
+
+export const passwordRestoreRequestFailedAction = createAction(
+    AuthActionTypes.passwordRestoreRequestFailed,
+    props<{ reason: string, code: string }>(),
+);
+
+export const passwordRestoreRequestSuccessAction = createAction(
+    AuthActionTypes.passwordRestoreRequestSuccess,
+    props<{ message: string }>(),
 );

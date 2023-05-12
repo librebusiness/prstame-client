@@ -1,4 +1,4 @@
-<div class="fixed top-0 left-0 right-0 bottom-0 z-30 bg-white flex flex-col items-center justify-center">
+<div *ngIf="showPreload | async" class="fixed top-0 left-0 right-0 bottom-0 z-30 bg-white flex flex-col items-center justify-center">
     <div class="flex items-center justify-center">
         <img src="/assets/apple-touch-icon.png" alt="" class="w-24 md:w-40 h-auto">
         <h1 class="sans text-4xl md:text-6xl ml-2 text-indigo-500 font-cursive">Prstame</h1>
