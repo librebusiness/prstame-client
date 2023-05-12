@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PreloadComponent } from './preload/preload.component';
-
-
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    PreloadComponent
+    PreloadComponent,
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
   exports: [
-    PreloadComponent
+    PreloadComponent,
+    NavbarComponent,
+    SidebarComponent
   ]
 })
 export class SharedModule { }

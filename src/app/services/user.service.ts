@@ -58,4 +58,14 @@ export class UserService {
     return this.http.post(apiRoot + '/update-email/' + id, { confirmation_token })
   }
 
+  uploadAvatar(data: string) {
+    return this.http.post(apiRoot + '/upload-avatar', { image: data }, {
+      headers: this.headers
+    });
+  }
+
+  getAvatar(id:string) {
+    return this.http.get(apiRoot + '/uploads/'+id);
+  }
+
 }

@@ -5,7 +5,6 @@ import { LoginPayload } from '../interfaces/login-payload';
 import { apiRoot } from '../api';
 import { SignupPayload } from '../interfaces/signup-payload';
 import { LoginResponse } from '../interfaces/login-response';
-import { SignupResponse } from '../interfaces/signup-response';
 import { Store } from '@ngrx/store';
 import { AppState } from '../reducers';
 import { AuthActionTypes } from '../reducers/auth.actions';
